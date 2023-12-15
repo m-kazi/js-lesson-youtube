@@ -23,8 +23,22 @@ let booleanIsLoggedIn = Boolean(loggedIn)
 
 
 let stringNumber = 33
-console.log(typeof stringNumber);
+//console.log(typeof stringNumber);
 
 let convertedString = String(stringNumber)
-console.log(typeof convertedString);
+//onsole.log(typeof convertedString);
 
+
+//****************OPERATIONS**************
+
+
+let value = 3
+let negValue = -value
+//console.log(negValue);
+
+// console.log(2+2);
+// console.log(2-2);
+// console.log(2*2);
+// console.log(2**3);
+// console.log(2/3);
+// console.log(5%3);
