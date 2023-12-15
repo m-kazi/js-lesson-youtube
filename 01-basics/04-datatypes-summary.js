@@ -6,3 +6,9 @@
 // Reference (Non premitive) Type
 
 // Array, Objects, Functions 
+
+//**************************************************************
+
+//Memory Type
+
+//Stack (Primitive), Heap (Non premitive)
