@@ -7,12 +7,12 @@ tinderUser.name = "Sam";
 tinderUser.isLoggedIn = false;
 
 // console.log(tinderUser);
-console.log(Object.keys(tinderUser));
-console.log(Object.values(tinderUser));
-console.log(Object.entries(tinderUser));
+// console.log(Object.keys(tinderUser));
+// console.log(Object.values(tinderUser));
+// console.log(Object.entries(tinderUser));
 
 //This is to check if there's a property or not
-console.log(tinderUser.hasOwnProperty("isLoggedIn"));
+// console.log(tinderUser.hasOwnProperty("isLoggedIn"));
 
 const regularUser = {
     email: "pat@google.com",
@@ -38,3 +38,17 @@ const returnedTarget = Object.assign(target, source);
 //Another way is to use spread operator
 const obj1 = { ...target, ...source };
 // console.log(obj1);
+
+//Destructuring object
+const course = {
+    coursename: "JavaScript",
+    price: "999",
+    courseInstructor: "Tanim",
+};
+//console.log(course.courseInstructor);
+
+//const {value to extract} = value to extract from
+//also can rename {courseInstructor: instructor}
+const { courseInstructor: instructor } = course;
+// console.log(courseInstructor);
+console.log(instructor);
