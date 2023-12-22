@@ -32,7 +32,7 @@ console.log("A ", myArr);
 
 //.slice() gives a range of portion excludes the last value in the range of the array and doesn't manipulate the original array.
 const myN1 = myArr.slice(3, -1);
-console.log(myN1);
+// console.log(myN1);
 // console.log("B ", myN1);
 // console.log(myArr);
 
