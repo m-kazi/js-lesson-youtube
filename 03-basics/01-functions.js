@@ -16,4 +16,38 @@ function userLoginMessage(username = "User") {
     }
     return `${username} just logged in.`;
 }
-console.log(userLoginMessage("Tanim"));
+// console.log(userLoginMessage("Tanim"));
+
+//Rest operator in function '...' - 3 dots
+function calculateCart(val1, ...num1) {
+    return num1;
+}
+// console.log(calculateCart(200, 300, 400));
+
+//Handling objects in function
+const user = {
+    name: "Tanim",
+    price: 200,
+};
+
+function handleObject(anyobject) {
+    console.log(
+        `Username is ${anyobject.name}, item price is ${anyobject.price}.`
+    );
+}
+
+// handleObject(user);
+handleObject({
+    name: "Kazi",
+    price: 300,
+});
+
+//Arrays in function
+
+const myArr = [10, 20, 30];
+
+function returnArray(getArray) {
+    return getArray[2];
+}
+// console.log(returnArray(myArr));
+console.log(returnArray([200, 300, 500]));
