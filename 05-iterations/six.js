@@ -1,3 +1,5 @@
+//.filter is always based on the condition
+
 const coding = ["js", "ruby", "java", "python"];
 
 const codingLang = coding.filter((item) => item == "python");
