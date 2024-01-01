@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DOM | Session four</title>
+    </head>
+    <body style="background-color: #212121; color: #fff">
+        <ul class="language">
+            <li>Javascript</li>
+        </ul>
+
+        <script>
+            function addListItem(langName) {
+                const li = document.createElement("li");
+                li.innerHTML = `${langName}`;
+                document.querySelector(".language").appendChild(li);
+            }
+            addListItem("Python");
+            addListItem("Typescript");
+
+            //Optimized way adding
+            function addOptiList(langName) {
+                const li = document.createElement("li");
+                li.appendChild(document.createTextNode(langName));
+                document.querySelector(".language").appendChild(li);
+            }
+            addOptiList("Golang");
+
+            //Editing
+            const secondLang = document.querySelector("li:nth-child(2)");
+            // secondLang.innerHTML = "Java";
+
+            //Another way of editing by creating a new element
+            const newli = document.createElement("li");
+            newli.textContent = "Mojo";
+            secondLang.replaceWith(newli);
+
+            //Editing another way
+            const firstLang = document.querySelector("li:first-child");
+            firstLang.outerHTML = "<li>Java</li>";
+
+            //remove
+            const lastLang = document.querySelector("li:last-child");
+            lastLang.remove();
+        </script>
+    </body>
+</html>
