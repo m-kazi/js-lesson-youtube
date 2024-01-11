@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>API - XML Request</title>
+        <style>
+            .card {
+                width: 500px;
+                height: 500px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container {
+                padding: 5px;
+                text-align: center;
+            }
+
+            .profile {
+                padding: 2px 5px;
+                background-color: orange;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body style="background-color: #212121; color: #fff">
+        <!-- https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState -->
+        <div class="card">
+            <button class="profile">Click</button>
+            <img src="" />
+            <div class="container">
+                <h3></h3>
+                <p></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        //most of the time API request back will come as 'string' and need to convert using JSON.parse
+
+        //From chatGPT
+
+        const requestUrl = "https://api.github.com/users/m-kazi";
+        const xhr = new XMLHttpRequest();
+
+        // Move the event listener outside if you want the request to be made immediately when the page loads
+        document.querySelector(".profile").addEventListener("click", () => {
+            console.log("working click");
+
+            xhr.open("GET", requestUrl);
+            xhr.send();
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        const data = JSON.parse(xhr.responseText);
+                        console.log(typeof data);
+
+                        document
+                            .querySelector(".card img")
+                            .setAttribute("src", `${data.avatar_url}`);
+                        document.querySelector("h3").innerHTML = `${data.name}`;
+                        document.querySelector("p").innerHTML = `${data.bio}`;
+                    } else {
+                        console.error(
+                            `Error: ${xhr.status} - ${xhr.statusText}`
+                        );
+                    }
+                }
+            };
+        });
+    </script>
+</html>
